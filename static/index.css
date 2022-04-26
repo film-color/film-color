@@ -1,0 +1,142 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    background: #1f1f1f;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.panel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: linear-gradient(rgb(0,0,0), rgba(0,0,0,0.5));
+    padding: 20px 0;
+    z-index: 10;
+}
+
+.search {
+    position: relative;
+    margin: 0 0 0 100px;
+}
+
+.search__icon {
+    position: absolute;
+    left: 8px;
+    top: 11px;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+    color: #fff;
+}
+
+.search__input {
+    background: #202124;
+    border: 1px solid #5f6368;
+    border-radius: 24px;
+    padding: 10px 10px 10px 30px;
+    width: 638px;
+    width: 50%;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.movie-cards {
+    margin-top: 150px;
+    color: #fff;
+    line-height: 2em;
+    counter-reset: movieCard;
+} 
+
+.movie-card {
+    position: relative;
+    padding: 20px 0;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    counter-increment: movieCard;
+}
+
+.movie-card::before {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    content: counter(movieCard) ".";
+    color: #555;
+}
+
+.movie-card:hover {
+    transition: background ease 0.3s;
+    background: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.movie-card__imdb:link,
+.movie-card__imdb:visited,
+.movie-card__imdb:hover,
+.movie-card__imdb:active {
+    color: #777;
+}
+
+.logo {
+    display: inline-block;
+    background: red;
+    color: #fff;
+    border-radius: 5px;
+    margin: 0 0 10px 100px;
+    padding: 3px 5px;
+    font-weight: normal;
+    font-size: 20px;
+    width: auto;
+}
+
+.movie-card__title,
+.movie-card__info {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.movie-card__info {
+    color: #777;
+    display: flex;
+    align-items: center;
+}
+
+.movie-card__info-item {
+    margin-right: 20px;
+}
+
+.movie-card__title-en {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.movie-card__title-ru {
+    font-size: 18px;
+    color: #aaa;
+}
+
+.movie-card__average-timeline,
+.movie-card__dominant-timeline {
+    width: 100%;
+    height: 20px;
+    margin: 3px 0;
+    overflow: hidden;
+}
+
+.movie-card__average-timeline {
+    background: #333;
+}
+
+.movie-card__dominant-timeline {
+    background: #666;
+}
+
+.movie-card__average-timeline-image,
+.movie-card__dominant-timeline-image {
+    max-width: 100%;
+    min-height: 20px;
+    display: block;
+}
