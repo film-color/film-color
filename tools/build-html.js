@@ -7,8 +7,8 @@ function formatDate(rawMins) {
     return `${hours}h ${mins}m`;
 }
 
-const template = fs.readFileSync('./template.html', 'utf8');
-const data = JSON.parse(fs.readFileSync('../data/movies.json', 'utf8'));
+const template = fs.readFileSync('./tools/template.html', 'utf8');
+const data = JSON.parse(fs.readFileSync('./data/movies.json', 'utf8'));
 
 const uniqId = new Set();
 
@@ -59,5 +59,5 @@ let result = template
     .replace(/\{NOW\}/g, Date.now())
     .replace(/\{CONTENT\}/, content.join('\n'));
 
-fs.writeFileSync('../index.html', result, { encoding: 'utf-8'});
-fs.writeFileSync('../static/data.js', 'var moviesData = ' + JSON.stringify(preparedData, null, '  '), { encoding: 'utf-8'})
+fs.writeFileSync('./index.html', result, { encoding: 'utf-8'});
+fs.writeFileSync('./static/data.js', 'var moviesData = ' + JSON.stringify(preparedData, null, '  '), { encoding: 'utf-8'})
